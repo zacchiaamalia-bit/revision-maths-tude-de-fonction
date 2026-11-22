@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Révise tes fonctions — Maths complémentaires</title>
+<style>
+:root{--ink:#17233b;--muted:#64748b;--blue:#3157d5;--pale:#eef2ff;--line:#e2e8f0;--green:#147d50;--red:#b42318}*{box-sizing:border-box}body{margin:0;background:#f5f7fc;color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}.wrap{max-width:900px;margin:auto;padding:28px 18px 60px}.hero{background:linear-gradient(135deg,#172554,#3157d5);color:white;border-radius:24px;padding:30px;box-shadow:0 12px 32px #17255422}.tag{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.8}.hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;margin:10px 0}.hero p{max-width:650px;color:#e0e7ff;margin:10px 0 0}.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.stat{background:#ffffff20;border:1px solid #ffffff30;border-radius:12px;padding:9px 13px;font-size:.9rem}.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:18px;box-shadow:0 5px 18px #17255408}.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.level{border:1px solid var(--line);background:white;border-radius:13px;padding:13px 10px;text-align:left;cursor:pointer;color:var(--ink)}.level b{display:block}.level small{color:var(--muted)}.level.active{border:2px solid var(--blue);background:var(--pale)}button{font:inherit}.level:focus-visible,.answer:focus-visible,.action:focus-visible{outline:3px solid #9db1ff;outline-offset:2px}.topline{display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--muted);font-size:.9rem}.bar{height:8px;background:#edf0f6;border-radius:99px;overflow:hidden;margin:12px 0 22px}.fill{height:100%;background:var(--blue);width:0;transition:width .25s}.question{font-size:1.2rem;font-weight:700;margin:10px 0 18px}.math{background:#f8faff;border-left:3px solid #8ba2ff;padding:12px 14px;border-radius:8px;margin:12px 0;font-family:Georgia,serif;font-size:1.1rem}.answers{display:grid;gap:10px}.answer{border:1px solid var(--line);border-radius:12px;padding:13px 15px;text-align:left;background:white;cursor:pointer;color:var(--ink)}.answer:hover:not(:disabled){border-color:#8ba2ff;background:#f8faff}.answer:disabled{cursor:default}.answer.correct{border-color:#62b88e;background:#edfaf3}.answer.wrong{border-color:#e59a94;background:#fff2f1}.feedback{margin-top:15px;padding:14px;border-radius:12px;display:none}.feedback.show{display:block}.feedback.good{background:#edfaf3;color:#145c3c}.feedback.bad{background:#fff2f1;color:#8f211a}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.action{border:0;border-radius:11px;padding:11px 17px;background:var(--blue);color:white;font-weight:700;cursor:pointer}.action.secondary{background:#eef2ff;color:#2947ad}.action:disabled{opacity:.45;cursor:not-allowed}.hint{color:var(--muted);font-size:.9rem}.result{display:none;text-align:center;padding:12px}.result.show{display:block}.score{font-size:2.5rem;font-weight:800;color:var(--blue)}footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:24px}@media(max-width:650px){.levels{grid-template-columns:repeat(2,1fr)}.hero{padding:23px}.panel{padding:17px}}
+</style></head>
+<body><main class="wrap">
+<header class="hero"><div class="tag">Terminale · Maths complémentaires</div><h1>Étudier une fonction</h1><p>Entraîne-toi avec des QCM progressifs, vérifie tes réponses et lis les explications pour comprendre la méthode.</p><div class="stats"><div class="stat">🎯 4 niveaux</div><div class="stat">📝 16 QCM · 6 fiches de cours</div><div class="stat">💡 Corrections expliquées</div></div></header>
+<section class="panel" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+<button class="action" id="showQuiz">📝 Faire les QCM</button>
+<button class="action secondary" id="showCourse">📚 Consulter le cours</button>
+</section>
+<section class="panel" id="course" style="display:none">
+<h2 style="margin-top:0">📚 Cours détaillé — Étudier une fonction</h2>
+<p class="hint">Cours de révision de Maths complémentaires — définitions, méthodes, exemples calculés et erreurs à éviter.</p>
+
+<article class="math">
+<strong>1. Domaine de définition</strong><br><br>
+Le domaine de définition, noté souvent D<sub>f</sub>, est l’ensemble des nombres réels que l’on peut remplacer à la place de x sans rendre l’expression impossible.<br><br>
+<strong>Les trois vérifications principales :</strong><br>
+• <u>Fraction :</u> un dénominateur doit être différent de 0. On résout donc « dénominateur = 0 » pour trouver les valeurs interdites.<br>
+• <u>Racine carrée :</u> ce qui se trouve sous la racine doit être supérieur ou égal à 0.<br>
+• <u>Logarithme népérien ln :</u> si cette fonction apparaît au programme de l’exercice, son argument doit être strictement positif.<br><br>
+<strong>Exemple 1 :</strong> f(x)=1/(x−2). Le dénominateur ne doit pas être nul : x−2 ≠ 0, donc x ≠ 2. Ainsi D<sub>f</sub>=ℝ\\{2}.<br><br>
+<strong>Exemple 2 :</strong> g(x)=√(x+3). Il faut x+3 ≥ 0, donc x ≥ −3. Ainsi D<sub>g</sub>=[−3 ; +∞[.<br><br>
+<strong>Méthode :</strong> repère les fractions, racines et logarithmes ; écris les conditions ; résous-les ; puis donne le domaine sous forme d’intervalle ou d’ensemble.<br>
+<strong>Erreur fréquente :</strong> oublier qu’une fraction n’existe pas lorsque son dénominateur vaut zéro.
+</article>
+
+<article class="math">
+<strong>2. Image et antécédent</strong><br><br>
+<strong>L’image</strong> d’un nombre a par f est le résultat f(a). Pour la calculer, on remplace chaque x par a.<br>
+<strong>Un antécédent</strong> d’un nombre b est une valeur a qui vérifie f(a)=b. Pour le trouver, on résout une équation.<br><br>
+<strong>Exemple :</strong> f(x)=2x+1.<br>
+Image de 3 : f(3)=2×3+1=7. L’image de 3 est donc 7.<br>
+Antécédent de 9 : on résout 2x+1=9, donc 2x=8 puis x=4. L’antécédent de 9 est 4.<br><br>
+<strong>À retenir :</strong> une image est unique pour une fonction donnée et un x donné. En revanche, un nombre peut avoir zéro, un ou plusieurs antécédents.<br>
+<strong>Sur un graphique :</strong> pour lire f(a), pars de x=a sur l’axe horizontal, rejoins la courbe verticalement puis lis l’ordonnée. Pour chercher les antécédents de b, trace mentalement la droite horizontale y=b et lis les abscisses des points d’intersection avec la courbe.
+</article>
+
+<article class="math">
+<strong>3. Dérivée : sens et formules utiles</strong><br><br>
+La dérivée f′ décrit la variation instantanée d’une fonction. Elle sert surtout à déterminer où la fonction augmente ou diminue et à repérer ses extremums.<br><br>
+<strong>Formules de base :</strong><br>
+• (k)'=0, si k est une constante ;<br>
+• (x)'=1 ;<br>
+• (x²)'=2x ;<br>
+• (x³)'=3x² ;<br>
+• (xⁿ)'=n×xⁿ⁻¹ pour les puissances usuelles ;<br>
+• (ku)'=ku′, avec k constant ;<br>
+• (u+v)'=u′+v′ ;<br>
+• (uv)'=u′v+uv′ ;<br>
+• (u/v)'=(u′v−uv′)/v², lorsque v ne s’annule pas.<br><br>
+<strong>Exemple détaillé :</strong> f(x)=3x²−5x+4.<br>
+On dérive chaque terme : (3x²)'=3×2x=6x ; (−5x)'=−5 ; (4)'=0.<br>
+Donc <strong>f′(x)=6x−5</strong>.<br><br>
+<strong>Autre exemple :</strong> h(x)=(x+1)(x−2). Avec u=x+1 et v=x−2, u′=1 et v′=1. Alors h′=1×(x−2)+(x+1)×1=2x−1.<br><br>
+<strong>Conseil :</strong> écris les étapes de dérivation avant de simplifier. Vérifie notamment les signes « moins » et les constantes.
+</article>
+
+<article class="math">
+<strong>4. Signe de la dérivée et tableau de variations</strong><br><br>
+Sur un intervalle où f est dérivable :<br>
+• si f′(x)>0, f est strictement croissante ;<br>
+• si f′(x)<0, f est strictement décroissante ;<br>
+• si f′(x)=0 en un point, il peut y avoir un extremum, mais il faut regarder le signe de part et d’autre.<br><br>
+<strong>Exemple complet :</strong> f(x)=x²−4x+1.<br>
+1. Dérivée : f′(x)=2x−4=2(x−2).<br>
+2. Zéro de la dérivée : 2(x−2)=0, donc x=2.<br>
+3. Signe : pour x<2, f′(x)<0 ; pour x>2, f′(x)>0.<br>
+4. Variations : f décroît jusqu’à 2 puis croît après 2. Elle admet donc un minimum en x=2.<br>
+5. Valeur minimale : f(2)=4−8+1=−3. Le minimum est −3.<br><br>
+<strong>Construire un tableau :</strong><br>
+• indique les bornes de l’intervalle étudié ;<br>
+• place les valeurs qui annulent f′ et les valeurs interdites éventuelles ;<br>
+• indique le signe de f′ sur chaque intervalle ;<br>
+• ajoute les flèches de variation de f et les valeurs correspondantes.<br><br>
+<strong>Attention :</strong> f′(a)=0 ne suffit pas à prouver qu’il y a un maximum ou un minimum. Si le signe ne change pas, la fonction peut continuer à croître ou à décroître.
+</article>
+
+<article class="math">
+<strong>5. Limites : comprendre le comportement d’une fonction</strong><br><br>
+Une limite décrit vers quelle valeur f(x) se rapproche lorsque x se rapproche d’un nombre a, ou lorsque x devient très grand en valeur absolue. Une limite n’est pas forcément une valeur que la fonction atteint.<br><br>
+<strong>Limites à l’infini :</strong><br>
+Pour un polynôme, le terme de plus haut degré domine lorsque x devient très grand en valeur absolue.<br>
+• Si le terme dominant est 3x², alors 3x² tend vers +∞ lorsque x tend vers +∞ et aussi lorsque x tend vers −∞.<br>
+• Si le terme dominant est −2x³, alors −2x³ tend vers −∞ lorsque x tend vers +∞ et vers +∞ lorsque x tend vers −∞.<br><br>
+<strong>Limites usuelles à connaître :</strong><br>
+• 1/x tend vers 0 lorsque x tend vers +∞ ou −∞ ;<br>
+• 1/x² tend vers 0 lorsque x tend vers +∞ ou −∞ ;<br>
+• x² tend vers +∞ lorsque x tend vers +∞ ou −∞ ;<br>
+• x³ tend vers +∞ en +∞ et vers −∞ en −∞.<br><br>
+<strong>Exemple :</strong> f(x)=3x²−x+2. Le terme dominant est 3x². Donc f(x) tend vers +∞ lorsque x tend vers +∞ et lorsque x tend vers −∞.<br><br>
+<strong>Limites près d’une valeur :</strong> on peut étudier séparément la limite à gauche (x→a⁻) et à droite (x→a⁺). Elles peuvent être différentes.<br><br>
+<strong>Formes indéterminées :</strong> certaines expressions comme +∞−∞, 0/0 ou ∞/∞ ne permettent pas de conclure immédiatement. Il faut transformer l’expression : factoriser, réduire au même dénominateur ou comparer les termes dominants selon le cas.<br>
+<strong>Erreur fréquente :</strong> remplacer directement x par +∞ comme s’il s’agissait d’un nombre. On raisonne sur le comportement de l’expression.
+</article>
+
+<article class="math">
+<strong>6. Les asymptotes — cours détaillé</strong><br><br>
+Une asymptote est une droite dont la courbe se rapproche dans une certaine situation. Il existe trois types : verticale, horizontale et oblique. Il faut toujours préciser où l’asymptote est valable : en a, en +∞ ou en −∞.<br><br>
+
+<strong>A. Asymptote verticale : x=a</strong><br>
+La droite d’équation x=a est une asymptote verticale si au moins une des limites à gauche ou à droite est infinie :<br>
+lim<sub>x→a⁻</sub> f(x)=+∞ ou −∞, ou lim<sub>x→a⁺</sub> f(x)=+∞ ou −∞.<br><br>
+<strong>Exemple :</strong> f(x)=1/(x−2).<br>
+Lorsque x se rapproche de 2 par valeurs inférieures, x−2 est négatif et très proche de 0 : f(x) tend vers −∞. Lorsque x se rapproche de 2 par valeurs supérieures, x−2 est positif et très proche de 0 : f(x) tend vers +∞.<br>
+La droite <strong>x=2</strong> est donc une asymptote verticale.<br><br>
+<strong>Comment la repérer ?</strong><br>
+1. Cherche les valeurs interdites, souvent celles qui annulent un dénominateur.<br>
+2. Calcule les limites à gauche et à droite de chacune de ces valeurs.<br>
+3. Si au moins une limite est infinie, conclus à une asymptote verticale.<br>
+<strong>Attention :</strong> une valeur interdite ne donne pas automatiquement une asymptote. Par exemple, une simplification peut conduire à une limite finie : il faut donc calculer la limite avant de conclure.<br><br>
+
+<strong>B. Asymptote horizontale : y=L</strong><br>
+La droite y=L est une asymptote horizontale si f(x) tend vers le nombre réel L lorsque x tend vers +∞ ou −∞.<br><br>
+<strong>Exemple :</strong> f(x)=3+1/x.<br>
+Quand x tend vers +∞, 1/x tend vers 0, donc f(x) tend vers 3. La droite <strong>y=3</strong> est une asymptote horizontale en +∞. Le même calcul montre qu’elle est aussi asymptote en −∞.<br><br>
+<strong>Autre exemple :</strong> g(x)=(2x+1)/x=2+1/x. Comme 1/x tend vers 0 à l’infini, g(x) tend vers 2 : l’asymptote horizontale est y=2.<br>
+<strong>Méthode :</strong> calcule séparément la limite en +∞ et en −∞. Les deux limites peuvent être différentes, donc la fonction peut avoir deux asymptotes horizontales distinctes.<br><br>
+
+<strong>C. Asymptote oblique : y=ax+b</strong><br>
+La droite y=ax+b, avec a non nul, est une asymptote oblique si :<br>
+lim<sub>x→+∞</sub>[f(x)−(ax+b)]=0, ou la même limite lorsque x tend vers −∞.<br><br>
+<strong>Exemple détaillé :</strong> f(x)=2x+1+1/x.<br>
+On compare f(x) à la droite y=2x+1 :<br>
+f(x)−(2x+1)=1/x.<br>
+Or 1/x tend vers 0 lorsque x tend vers +∞ et lorsque x tend vers −∞. Donc la droite <strong>y=2x+1</strong> est une asymptote oblique aux deux infinis.<br><br>
+<strong>Comment trouver la droite ?</strong><br>
+Dans certains exercices, on peut réécrire f(x) sous la forme ax+b+un terme qui tend vers 0. Les termes ax+b donnent alors l’équation de l’asymptote. Si la méthode est au programme de l’exercice, on peut aussi déterminer a et b par les limites adaptées, puis vérifier que f(x)−(ax+b) tend bien vers 0.<br><br>
+
+<strong>D. Bilan : reconnaître le bon type</strong><br>
+• x se rapproche d’un nombre a et f(x) devient infinie : asymptote verticale x=a.<br>
+• x tend vers +∞ ou −∞ et f(x) tend vers un réel L : asymptote horizontale y=L.<br>
+• x tend vers +∞ ou −∞ et f(x) se rapproche d’une expression ax+b : asymptote oblique y=ax+b.<br><br>
+<strong>Pièges à éviter :</strong><br>
+• Une limite finie en x=a ne donne pas d’asymptote verticale.<br>
+• Une valeur interdite ne suffit pas à prouver qu’il existe une asymptote verticale.<br>
+• Une asymptote horizontale ou oblique peut être valable en +∞ mais pas en −∞.<br>
+• Une courbe peut couper une asymptote : cela n’empêche pas la droite d’être une asymptote.<br><br>
+<strong>Phrase de conclusion type bac :</strong> « Comme lim<sub>x→+∞</sub>[f(x)−(2x+1)]=0, la droite d’équation y=2x+1 est une asymptote oblique à la courbe représentative de f en +∞. »
+</article>
+
+<article class="math">
+<strong>7. Méthode complète pour étudier une fonction</strong><br><br>
+Pour présenter une étude de fonction clairement dans un devoir ou au bac, tu peux suivre cet ordre :<br>
+1. Déterminer le domaine de définition.<br>
+2. Calculer les limites aux bornes du domaine et repérer les asymptotes éventuelles.<br>
+3. Calculer la dérivée f′(x).<br>
+4. Étudier le signe de f′(x).<br>
+5. Dresser le tableau de variations de f.<br>
+6. Calculer les images ou résoudre les équations demandées.<br>
+7. Rédiger une conclusion qui répond précisément à la question.<br><br>
+<strong>Rédaction attendue :</strong> présente la formule ou la propriété utilisée, détaille le calcul essentiel, puis termine par une phrase qui interprète le résultat. Un résultat seul est rarement une justification suffisante.
+</article>
+
+<p><strong>Conseil pour le bac :</strong> entraîne-toi à refaire les exemples sans regarder le cours, puis vérifie chaque étape. Les tableaux de signes, les limites et les phrases de conclusion doivent être justifiés.</p>
+</section>
+<section class="panel" id="levelPanel"><h2 style="margin:0 0 14px">Choisis ton niveau</h2><div class="levels" id="levels"><button class="level active" data-level="0"><b>1 · Facile</b><small>Définition & images</small></button><button class="level" data-level="1"><b>2 · Moyen</b><small>Dérivées</small></button><button class="level" data-level="2"><b>3 · Difficile</b><small>Variations & limites</small></button><button class="level" data-level="3"><b>4 · Type bac</b><small>Étude complète</small></button></div></section>
+<section class="panel" id="quiz"><div class="topline"><span id="levelName">Niveau 1 · Facile</span><span id="progressText">Question 1 / 4</span></div><div class="bar"><div class="fill" id="progress"></div></div><div class="hint" id="topic">Domaine de définition</div><div class="question" id="question"></div><div class="math" id="formula" hidden></div><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="actions"><button class="action secondary" id="restart">Recommencer le niveau</button><button class="action" id="next" disabled>Question suivante →</button></div></section>
+<section class="panel result" id="result"><div class="tag" style="color:var(--muted)">Niveau terminé</div><div class="score" id="score">0 / 4</div><h2 id="resultTitle">Bravo !</h2><p id="resultText"></p><button class="action" id="retry">Refaire ce niveau</button> <button class="action secondary" id="nextLevel">Niveau suivant →</button></section>
+<footer>Fiches d'entraînement originales · Pense à rédiger les étapes de calcul sur ton brouillon.</footer>
+</main>
+<script>
+const levels=[
+{ name:'Niveau 1 · Facile',questions:[
+{topic:'Domaine de définition',q:'Quel est le domaine de définition de f(x) = 3x − 5 ?',opts:['Tous les réels ℝ','Les réels strictement positifs','[−5 ; +∞[','ℝ sauf 0'],a:0,why:'Une fonction affine est définie pour tout nombre réel : on peut remplacer x par n’importe quel réel.'},
+{topic:'Calcul d’image',q:'Soit f(x) = x² + 2. Quelle est l’image de 3 ?',opts:['9','11','6','5'],a:1,why:'On remplace x par 3 : f(3) = 3² + 2 = 9 + 2 = 11.'},
+{topic:'Antécédent',q:'Pour f(x) = 2x + 1, quel nombre a pour image 7 ?',opts:['2','3','4','6'],a:1,why:'On résout 2x + 1 = 7, donc 2x = 6 et x = 3.'},
+{topic:'Lecture de signe',q:'Pour tout réel x, x² est…',opts:['toujours négatif','toujours positif ou nul','toujours strictement positif','égal à x'],a:1,why:'Le carré d’un nombre réel est positif ou nul. Il vaut 0 uniquement lorsque x = 0.'}]},
+{ name:'Niveau 2 · Moyen',questions:[
+{topic:'Dérivée',q:'Quelle est la dérivée de f(x) = 5x² ?',opts:['5x','10x','10x²','x²'],a:1,why:'On utilise (xⁿ)′ = n xⁿ⁻¹ : (5x²)′ = 5 × 2x = 10x.'},
+{topic:'Dérivée d’une somme',q:'Si f(x) = x³ − 4x + 2, alors f′(x) vaut…',opts:['3x² − 4','x² − 4','3x − 4','3x² + 2'],a:0,why:'La dérivée de x³ est 3x², celle de −4x est −4 et celle de 2 est 0.'},
+{topic:'Tangente',q:'Le nombre dérivé f′(a) représente…',opts:['L’image de a','La pente de la tangente au point d’abscisse a','L’ordonnée à l’origine','Le maximum de f'],a:1,why:'Le nombre dérivé en a est le coefficient directeur de la tangente à la courbe au point d’abscisse a.'},
+{topic:'Signe de la dérivée',q:'Sur un intervalle, si f′(x) est strictement positive, alors f est…',opts:['décroissante','constante','croissante','négative'],a:2,why:'Une dérivée strictement positive sur un intervalle implique que la fonction y est strictement croissante.'}]},
+{ name:'Niveau 3 · Difficile',questions:[
+{topic:'Variations',q:'On sait que f′(x) = 2x − 6. Sur quel intervalle f est-elle décroissante ?',opts:[']−∞ ; 3[',']3 ; +∞[','ℝ','Aucun intervalle'],a:0,why:'f′(x) < 0 lorsque 2x − 6 < 0, soit x < 3. La fonction est donc décroissante sur ]−∞ ; 3[.'},
+{topic:'Extremum',q:'Une fonction passe de croissante à décroissante en x = 2. Que possède-t-elle en x = 2 ?',opts:['Un minimum local','Un maximum local','Une asymptote','Aucun extremum'],a:1,why:'Quand la fonction augmente puis diminue, elle atteint un maximum local au point de changement.'},
+{topic:'Limite',q:'Quelle est la limite de 3x² − x lorsque x tend vers +∞ ?',opts:['−∞','0','3','+∞'],a:3,why:'Le terme dominant est 3x². Quand x tend vers +∞, 3x² tend vers +∞ et domine le terme −x.'},
+{topic:'Lecture de variations',q:'Si f′(x) = (x − 1)(x + 2), quel est le signe de f′ sur ]−2 ; 1[ ?',opts:['Positif','Négatif','Nul partout','Impossible à déterminer'],a:1,why:'Sur ]−2 ; 1[, x − 1 est négatif et x + 2 est positif. Leur produit est donc négatif.'}]},
+{ name:'Niveau 4 · Type bac',questions:[
+{topic:'Étude complète · dérivée',q:'On étudie f(x) = x² − 4x + 1 sur ℝ. Quelle est sa dérivée ?',opts:['2x − 4','2x + 4','x − 4','x² − 4'],a:0,why:'Dérivée terme à terme : (x²)′ = 2x, (−4x)′ = −4 et 1′ = 0.'},
+{topic:'Étude complète · minimum',q:'Pour f(x) = x² − 4x + 1, en quelle abscisse la fonction atteint-elle son minimum ?',opts:['−4','0','2','4'],a:2,why:'f′(x) = 2x − 4 s’annule en x = 2. Elle est négative avant 2 et positive après : f atteint donc son minimum en 2.'},
+{topic:'Optimisation',q:'Un rectangle a un périmètre de 20 cm. Si un côté mesure x, l’autre mesure 10 − x. Quelle expression donne son aire ?',opts:['10x − x²','20x','x² + 10','2x + 10'],a:0,why:'Aire = longueur × largeur = x(10 − x) = 10x − x².'},
+{topic:'Interprétation',q:'Pour f(x) = x² − 4x + 1, quelle est la valeur minimale de f ?',opts:['−4','−3','−2','1'],a:1,why:'Le minimum est atteint en x = 2. f(2) = 4 − 8 + 1 = −3.'}]}
+];
+let level=0,index=0,score=0,answered=false;
+const $=id=>document.getElementById(id);
+function render(){const data=levels[level],item=data.questions[index];$('levelName').textContent=data.name;$('progressText').textContent=`Question ${index+1} / ${data.questions.length}`;$('progress').style.width=`${index/data.questions.length*100}%`;$('topic').textContent=item.topic;$('question').textContent=item.q;$('formula').hidden=true;$('answers').innerHTML='';$('feedback').className='feedback';$('feedback').textContent='';$('next').disabled=true;answered=false;item.opts.forEach((opt,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=String.fromCharCode(65+i)+'. '+opt;b.onclick=()=>choose(i);$('answers').appendChild(b)});$('quiz').style.display='block';$('result').classList.remove('show');document.querySelectorAll('.level').forEach((b,i)=>b.classList.toggle('active',i===level));}
+function choose(choice){if(answered)return;answered=true;const item=levels[level].questions[index],buttons=[...$('answers').children];buttons.forEach((b,i)=>{b.disabled=true;if(i===item.a)b.classList.add('correct');if(i===choice&&choice!==item.a)b.classList.add('wrong')});const good=choice===item.a;if(good)score++;const fb=$('feedback');fb.className='feedback show '+(good?'good':'bad');const method = item.topic.toLowerCase().includes('dériv') ? 'Règle de méthode : dérive chaque terme séparément, puis simplifie.' :
+item.topic.toLowerCase().includes('image') ? 'Règle de méthode : pour calculer une image, remplace x par la valeur demandée.' :
+item.topic.toLowerCase().includes('antécédent') ? 'Règle de méthode : pour trouver un antécédent, pose f(x) égale à l’image recherchée et résous.' :
+item.topic.toLowerCase().includes('variation') || item.topic.toLowerCase().includes('signe') ? 'Règle de méthode : le signe de f′ donne le sens de variation ; pense à étudier les changements de signe.' :
+item.topic.toLowerCase().includes('optim') || item.topic.toLowerCase().includes('aire') ? 'Règle de méthode : exprime d’abord la grandeur en fonction d’une seule variable, puis étudie ses variations.' :
+'Règle de méthode : identifie la propriété mathématique utilisée, puis vérifie chaque étape du raisonnement.';
+fb.innerHTML=`<strong>${good?'Bonne réponse !':'Pas tout à fait.'}</strong><br><br><strong>Justification :</strong> ${item.why}<br><br><strong>Méthode à retenir :</strong> ${method}`;$('next').disabled=false;$('next').textContent=index===levels[level].questions.length-1?'Voir mon résultat →':'Question suivante →';}
+function finish(){ $('quiz').style.display='none';$('result').classList.add('show');$('progress').style.width='100%';$('score').textContent=`${score} / ${levels[level].questions.length}`;$('resultTitle').textContent=score===4?'Excellent travail !':score>=2?'Bien joué, continue !':'Continue à t’entraîner !';$('resultText').textContent=`Tu as réussi ${score} question(s) sur ${levels[level].questions.length}. Relis les explications, puis recommence pour progresser.`;$('nextLevel').disabled=level===3;}
+$('next').onclick=()=>{if(index<levels[level].questions.length-1){index++;render()}else finish()};function reset(){index=0;score=0;render()}$('restart').onclick=reset;$('retry').onclick=reset;$('nextLevel').onclick=()=>{if(level<3){level++;reset()}};document.querySelectorAll('.level').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);reset()});$('showCourse').onclick=()=>{$('course').style.display='block';$('levelPanel').style.display='none';$('quiz').style.display='none';$('result').classList.remove('show');$('showCourse').classList.add('active')};
+$('showQuiz').onclick=()=>{$('course').style.display='none';$('levelPanel').style.display='block';$('quiz').style.display='block';$('showCourse').classList.remove('active');render()};
+render();
+</script></body></html>
